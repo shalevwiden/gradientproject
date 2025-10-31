@@ -40,7 +40,7 @@
   }
   50% {
     background-position: 100% 50%;
-    transform: scale(1.4);
+    transform: scale(1.2);
   }
   100% {
     background-position: 0% 50%;
@@ -49,15 +49,24 @@
 
 // moving option
 .gradient2class {
-  background: linear-gradient(
-    90deg,
-    #60c4ff,
-    #ff8a00,
-    #e52e71,
-    #5e9652,
-    #ff60a0
-  );
-  background-size: 300% 300%;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      #60c4ff,
+      #ff8a00,
+      #e52e71,
+      #5e9652,
+      #ff60a0
+    );
+    opacity: 0;
+    animation: fade 6s infinite;
+  }
+
   animation: gradientMove 6s linear infinite;
 }
 

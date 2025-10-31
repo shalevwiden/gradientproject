@@ -28,7 +28,36 @@ body {
     min-height: 100vh;
     width: 100%;
     flex: 1; // takes up remaining space between header and footer
-    padding-top: 200px;
+  }
+  .navbar {
+    width: 100%;
+    height: 120px;
+    margin: 0;
+    background-color: #449bffff;
+    color: white;
+    @include flexrow;
+    padding: 0px 30px;
+    justify-content: space-between;
+    margin-bottom: 200px;
+
+    .logo {
+      font-size: 35px;
+    }
+    .pages {
+      margin-right: 20px;
+      a {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          text-decoration-thickness: 2px;
+        }
+      }
+    }
   }
   .gradientcontainer {
     width: 80%;
