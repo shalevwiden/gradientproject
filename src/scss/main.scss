@@ -1,0 +1,85 @@
+@use "../utils/mixins" as *;
+@use "../utils/footer" as *;
+@use "./animations.scss" as *;
+
+:root {
+  --nobgimage: ../../images/towernobg.png;
+  --bgimage: ../../images/ut-tower.png;
+}
+
+$nobgimage: "../../images/towernobg.png";
+$bgimage: "../../images/ut-tower.png";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  @include bodyStyling;
+  background-color: #eee;
+
+  .sitecontainer {
+    @include flexcol();
+    // add some default gap
+    gap: 40px;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    flex: 1; // takes up remaining space between header and footer
+    padding-top: 200px;
+  }
+  .gradientcontainer {
+    width: 80%;
+    @include border(#ff0000);
+    @include flexcol;
+    height: auto;
+    padding: 30px;
+
+    // apply it to hundreds
+    div#editedimage {
+      // this is alright but not optimal
+      // vertical-align: middle;
+      position: relative;
+      top: 1px;
+
+      // path from html file
+
+      display: inline-block;
+      width: 100%;
+
+      // set a gradient here or an image as the bg
+
+      background: linear-gradient(
+        345deg,
+        #425d84 0%,
+        #ff0000ff 10%,
+        #ff9d60ff 49%,
+        #076505ff 95%
+      );
+
+      // make the bg the url image
+      background: url($nobgimage);
+      // background: conic-gradient(#938fc8, #e5a22e, #e54e08ff, #938fc8);
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      /* The gradient that will show through the visible parts */
+
+      -webkit-mask-image: url($nobgimage);
+      mask-image: url($nobgimage);
+      mask-mode: alpha;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+    }
+  }
+  .buttonsdiv {
+    @include flexcol;
+    border: 3px solid blue;
+    width: 80%;
+    height: 200px;
+  }
+}
