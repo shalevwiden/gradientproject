@@ -41,6 +41,9 @@ body {
 
     .logo {
       font-size: 35px;
+      @media (max-width: 400px) {
+        font-size: 25px;
+      }
     }
     .pages {
       margin-right: 20px;
@@ -61,102 +64,111 @@ body {
   #heading {
     margin: 50px 0px;
   }
-  .gradientcontainer {
-    width: 80%;
-    @include border(#ff0000);
-    border-style: dashed;
-    @include flexcol;
-    height: auto;
-    padding: 30px;
+}
+.gradientcontainer {
+  width: 80%;
+  @include border(#ff0000);
+  border-style: dashed;
+  @include flexcol;
+  height: auto;
+  padding: 30px;
 
-    // apply it to hundreds
-    div#editedimage {
-      // this is alright but not optimal
-      // vertical-align: middle;
-      position: relative;
-      top: 1px;
+  // apply it to hundreds
+  div#editedimage {
+    // this is alright but not optimal
+    // vertical-align: middle;
+    position: relative;
+    top: 1px;
 
-      // path from html file
+    // path from html file
 
-      display: inline-block;
-      width: 100%;
+    display: inline-block;
+    width: 100%;
 
-      // set a gradient here or an image as the bg
+    // set a gradient here or an image as the bg
 
-      background: linear-gradient(
-        345deg,
-        #425d84 0%,
-        #ff0000ff 10%,
-        #ff9d60ff 49%,
-        #076505ff 95%
-      );
+    background: linear-gradient(
+      345deg,
+      #425d84 0%,
+      #ff0000ff 10%,
+      #ff9d60ff 49%,
+      #076505ff 95%
+    );
 
-      // make the bg the url image
-      background: url($nobgimage);
-      // background: conic-gradient(#938fc8, #e5a22e, #e54e08ff, #938fc8);
+    // make the bg the url image
+    background: url($nobgimage);
+    // background: conic-gradient(#938fc8, #e5a22e, #e54e08ff, #938fc8);
 
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      /* The gradient that will show through the visible parts */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* The gradient that will show through the visible parts */
 
-      -webkit-mask-image: url($nobgimage);
-      mask-image: url($nobgimage);
-      mask-mode: alpha;
-      mask-repeat: no-repeat;
-      mask-size: contain;
-      mask-position: center;
+    -webkit-mask-image: url($nobgimage);
+    mask-image: url($nobgimage);
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+  }
+}
+.buttonsdiv {
+  @include flexcol;
+  border: 5px solid blue;
+  padding: 30px;
+  border-radius: 26px;
+  width: 80%;
+  height: 200px;
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: #007bff; // blue button
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #0056b3; // darker blue on hover
+      transform: translateY(-2px); // subtle lift effect
     }
   }
-  .buttonsdiv {
-    @include flexcol;
-    border: 5px solid blue;
-    padding: 30px;
-    border-radius: 26px;
-    width: 80%;
-    height: 200px;
+}
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      font-weight: 500;
-      color: white;
-      background-color: #007bff; // blue button
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-
-      &:hover {
-        background-color: #0056b3; // darker blue on hover
-        transform: translateY(-2px); // subtle lift effect
-      }
-    }
-  }
-
-  // only for about page
-  .aboutdiv {
-    height: auto;
-    width: 70%;
-    padding: 40px;
-    border: 2px solid black;
-    border-radius: 30px;
+// only for about page
+.aboutdiv {
+  height: auto;
+  width: 70%;
+  padding: 40px;
+  border: 2px solid black;
+  border-radius: 30px;
+  margin-top: 30px;
+  .links {
     margin-top: 30px;
-    .links {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      width: 30%;
-      i {
-        font-size: 28px;
-        color: rgba(53, 67, 195, 1);
-        margin: 0 10px;
-        transition: transform 0.2s ease;
+    margin-bottom: 20px;
+    width: 100%;
+    @include flexrow;
+    justify-content: flex-start;
+    gap: 5px;
+    i {
+      font-size: 28px;
+      color: rgba(53, 67, 195, 1);
+      margin: 0 5px;
+      transition: transform 0.2s ease;
+    }
+    i.fa-instagram {
+      color: rgba(248, 78, 75, 1);
+      &:hover {
+        color: #c20a41ff; /* LinkedIn blue, or your theme */
       }
+    }
 
-      i:hover {
-        transform: scale(1.2);
-        color: #0a66c2; /* LinkedIn blue, or your theme */
-      }
+    i:hover {
+      transform: scale(1.2);
+      color: #0a66c2; /* LinkedIn blue, or your theme */
     }
   }
 }
