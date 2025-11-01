@@ -1,5 +1,6 @@
-# UT Tower Gradient stuff
+# Gradient stuff
 
+Started with UT tower.
 Many ideas:
 
 1. Take the tower, remove bg, make it a gradient
