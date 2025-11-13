@@ -7,8 +7,17 @@ const gradient2button = buttonsdiv.querySelector("#gradient2button");
 const gradient3button = buttonsdiv.querySelector("#gradient3button");
 
 const applyGradient = (newClass) => {
-  editedimage.className = ""; // clear all previous gradients
-  editedimage.classList.add(newClass); // apply the new one
+  // toggle it this way
+  if (editedimage.classList.contains(newClass)) {
+    editedimage.classList.remove(newClass);
+    console.log("Removed:", newClass);
+    return;
+  }
+
+  // otherwise, clear all other gradients and apply the new one
+  editedimage.className = "";
+  editedimage.classList.add(newClass);
+  console.log("Applied:", newClass);
 };
 
 gradient1button.addEventListener("click", () => {
