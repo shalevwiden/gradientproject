@@ -191,19 +191,20 @@ body #heading {
   top: 1px;
   display: inline-block;
   width: 100%;
-  background: linear-gradient(345deg, #425d84 0%, red 10%, #ff9d60 49%, #076505 95%);
   background: url("../../images/towernobg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* The gradient that will show through the visible parts */
+  /* The gradient will fit the shape of the image specificied here
+  In the $nobgimage variable
+  */
   -webkit-mask-image: url("../../images/towernobg.png");
   mask-image: url("../../images/towernobg.png");
+  -webkit-mask-size: contain;
+          mask-size: contain;
   mask-mode: alpha;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
 }

@@ -87,29 +87,36 @@ body {
 
     // set a gradient here or an image as the bg
 
-    background: linear-gradient(
-      345deg,
-      #425d84 0%,
-      #ff0000ff 10%,
-      #ff9d60ff 49%,
-      #076505ff 95%
-    );
-
     // make the bg the url image
+    // set either the url or the gradient to be the bg
     background: url($nobgimage);
-    // background: conic-gradient(#938fc8, #e5a22e, #e54e08ff, #938fc8);
+
+    // background: linear-gradient(
+    //   345deg,
+    //   #425d84 0%,
+    //   #0091ffff 10%,
+    //   #d39d6dff 49%,
+    //   #95ef8dff 95%
+    // );
 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* The gradient that will show through the visible parts */
+    /* The gradient will fit the shape of the image specificied here
+    In the $nobgimage variable
+    */
 
     -webkit-mask-image: url($nobgimage);
     mask-image: url($nobgimage);
+
+    // maintains the original shape
+    mask-size: contain;
+
     mask-mode: alpha;
     mask-repeat: no-repeat;
-    mask-size: contain;
     mask-position: center;
+
+    // background: conic-gradient(#938fc8, #e5a22e, #e54e08ff, #938fc8);
   }
 }
 .buttonsdiv {
