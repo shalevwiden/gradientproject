@@ -159,10 +159,13 @@ body {
       margin: 0 5px;
       transition: transform 0.2s ease;
     }
-    i.fa-instagram {
-      color: rgba(248, 78, 75, 1);
-      &:hover {
-        color: #c20a41ff; /* LinkedIn blue, or your theme */
+    #instalink {
+      display: none;
+      i.fa-instagram {
+        color: rgba(248, 78, 75, 1);
+        &:hover {
+          color: #c20a41ff; /* LinkedIn blue, or your theme */
+        }
       }
     }
 

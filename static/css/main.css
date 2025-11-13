@@ -262,10 +262,13 @@ body #heading {
   margin: 0 5px;
   transition: transform 0.2s ease;
 }
-.aboutdiv .links i.fa-instagram {
+.aboutdiv .links #instalink {
+  display: none;
+}
+.aboutdiv .links #instalink i.fa-instagram {
   color: rgb(248, 78, 75);
 }
-.aboutdiv .links i.fa-instagram:hover {
+.aboutdiv .links #instalink i.fa-instagram:hover {
   color: #c20a41; /* LinkedIn blue, or your theme */
 }
 .aboutdiv .links i:hover {
